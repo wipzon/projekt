@@ -1,0 +1,1 @@
+(()=>{var r={409:r=>{r.exports={calculate:function(r,e,t){switch(t){case"add":return r+e;case"subtract":return r-e;case"multiply":return r*e;case"divide":return 0===e?"Cannot divide by zero":r/e;default:return"Invalid operation"}}}}},e={};!function t(a){var n=e[a];if(void 0!==n)return n.exports;var u=e[a]={exports:{}};return r[a](u,u.exports,t),u.exports}(409)})();
