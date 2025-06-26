@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Simple Calculator</title><link rel="stylesheet" href="style.css"/><script defer="defer" src="main.js"></script></head><body><div class="calculator"><h1>Simple Calculator</h1><input type="number" id="a" placeholder="Enter first number"/> <input type="number" id="b" placeholder="Enter second number"/> <select id="operation"><option value="add">➕ Add</option><option value="subtract">➖ Subtract</option><option value="multiply">✖ Multiply</option><option value="divide">➗ Divide</option></select> <button onclick="performCalculation()">Calculate</button><div id="result"></div></div><script>function calculate(a, b, operation) {
+      switch (operation) {
+        case 'add':
+          return a + b;
+        case 'subtract':
+          return a - b;
+        case 'multiply':
+          return a * b;
+        case 'divide':
+          return b === 0 ? 'Cannot divide by zero' : a / b;
+        default:
+          return 'Invalid operation';
+      }
+    }
+
+    function performCalculation() {
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const operation = document.getElementById('operation').value;
+
+      const result = calculate(a, b, operation);
+      document.getElementById('result').textContent = `Result: ${result}`;
+    }</script></body></html>
