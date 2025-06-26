@@ -1,4 +1,4 @@
-const { calculate } = require('./calculator');
+const { calculate } = require('../calculator');
 
 describe('Calculator Tests', () => {
 
