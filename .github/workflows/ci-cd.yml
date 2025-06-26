@@ -32,6 +32,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Cleanup git extraheader
+        run: |
+          if git config --get-regexp '^http\.https://github\.com/.extraheader$' >/dev/null 2>&1; then
+            git config --unset-all http.https://github.com/.extraheader
+          fi
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
@@ -39,5 +47,6 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_DEPLOY_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/"       # Location of your static files
-          output_location: "/"    # No build step, just copy everything
+          app_location: "/"
+          output_location: "/"
+
