@@ -11,8 +11,10 @@ To jest projekt zrobiony na NDABO
 git clone https://github.com/użytkownik/projekt
 # Przejście do katalogu projektu
 cd projekt
-# Instalacja zależności
-npm install
+# Build and deploy (manual)
+npm run build
+# Deploy via CI/CD on push to main
+git push origin main
 ```
 ## Użycie
 ```javascript
